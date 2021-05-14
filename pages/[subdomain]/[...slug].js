@@ -18,7 +18,9 @@ function Home(props = {}) {
 export async function getStaticProps(context) {
   const data = {};
 
-  data.params = context.params;
+  if (context?.params) {
+    data.params = context.params;
+  }
   return {
     props: data,
     revalidate: 1,
