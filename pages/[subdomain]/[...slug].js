@@ -1,6 +1,10 @@
 import Link from "next/link";
-
+import { useRouter } from "next/router";
 function Home(props = {}) {
+  const router = useRouter();
+  if (router.isFallback) {
+    return <div>Loading...</div>;
+  }
   return (
     <div>
       <pre>{JSON.stringify(props, " ", 2)}</pre>

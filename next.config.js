@@ -1,6 +1,7 @@
 const DOMAIN = process.env.VERCEL_ENV ? "flevr.com" : "local.host";
 
 module.exports = {
+  webpack: {},
   async rewrites() {
     return {
       afterFiles: [
