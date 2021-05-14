@@ -15,9 +15,12 @@ function Home(props = {}) {
   );
 }
 
-export async function getStaticProps({ params = {} }) {
+export async function getStaticProps(context) {
+  const data = {};
+
+  data.params = context.params;
   return {
-    props: params,
+    props: data,
     revalidate: 1,
   };
 }
