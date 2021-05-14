@@ -1,5 +1,14 @@
+import Link from "next/link";
+
 function Home(props = {}) {
-  return <pre>{JSON.stringify(props, " ", 2)}</pre>;
+  return (
+    <div>
+      <pre>{JSON.stringify(props, " ", 2)}</pre>
+      <Link href="/posts/some-path">
+        <a>Link</a>
+      </Link>
+    </div>
+  );
 }
 
 export async function getStaticProps({ params = {} }) {
